@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <!--to provide menu as dark color class navbar-dark bg-dark(background dark) is responsible-->
+
+    <div><a href="https://www.in28minutes.com" class="navbar-brand">in28minutes</a></div>
+    <!--class="navbar-brand" : it will highlight the brand/trademark/logo-->
+
+    <ul class="navbar-nav">
+      <!-- <li><a href="/welcome/Raghav" class="nav-link">Home</a></li> //reloads entire page-->
+      <li><a routerLink="/welcome/Raghav" class="nav-link">Home</a></li>
+      <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <!--to send elements in corner (right)-->
+      <li><a routerLink="/login" class="nav-link">Login</a></li>
+      <li><a routerLink="/logout" class="nav-link">Logout</a></li>
+    </ul>
+
+  </nav>
+</header>

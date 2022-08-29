@@ -1,0 +1,18 @@
+<h1>Login!</h1>
+
+<div class="conatiner">
+
+  <!-- <small *ngIf="invalidLogin">{{ errorMessage }}</small> -->
+  <div class="alert alert-warning" *ngIf="invalidLogin">{{ errorMessage }}</div>
+
+  <div>
+  User Name : <input type="text" name="username" [(ngModel)]="username">
+  <!--interpolation = one way binding from logic/property to template/view  e.g. value="{{username}}"-->
+  <!--two way binding = both way binding from logic to template and vice versa-->
+    <!--[()] =  banana in a box -->
+  Password  : <input type="password" name="password" [(ngModel)]="password">
+
+  <!--(event)=> whatShouldWeDo()-->
+  <button (click)=handleLogin() class="btn btn-outline-success">Login</button><!--event binding -->
+  </div>
+</div>
