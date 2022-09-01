@@ -7,14 +7,15 @@
 
     <ul class="navbar-nav">
       <!-- <li><a href="/welcome/Raghav" class="nav-link">Home</a></li> //reloads entire page-->
-      <li><a routerLink="/welcome/Raghav" class="nav-link">Home</a></li>
-      <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+      <li><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" routerLink="/welcome/Raghav" class="nav-link">Home</a></li>
+      <!-- <li><a *ngIf="this.isUserLoggedIn" routerLink="/todos" class="nav-link">Todos</a></li> //page will be responsive only once as it loaded/refreshed only once as it is SPA and routerlink is used not href(should be used only when no option is there)-->
+      <li><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" routerLink="/todos" class="nav-link">Todos</a></li>
     </ul>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
       <!--to send elements in corner (right)-->
-      <li><a routerLink="/login" class="nav-link">Login</a></li>
-      <li><a routerLink="/logout" class="nav-link">Logout</a></li>
+      <li><a *ngIf="!hardcodedAuthentication.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="hardcodedAuthentication.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
     </ul>
 
   </nav>
